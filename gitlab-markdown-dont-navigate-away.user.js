@@ -3,7 +3,7 @@
 // @namespace    https://gitlab.com/southgate/userscripts/gitlab-markdown-dont-navigate-away/raw/master/gitlab-markdown-dont-navigate-away.user.js
 // @updateURL    https://gitlab.com/southgate/userscripts/gitlab-markdown-dont-navigate-away/raw/master/gitlab-markdown-dont-navigate-away.user.js
 // @downloadURL  https://gitlab.com/southgate/userscripts/gitlab-markdown-dont-navigate-away/raw/master/gitlab-markdown-dont-navigate-away.user.js
-// @version      0.0.1
+// @version      0.1.0
 // @description  Don't navigate away when editing gitlab markdown. Saves loss of work!
 // @author       David Southgate
 // @match        https://gitlab.com/*/edit/*.md
@@ -15,6 +15,14 @@
     'use strict';
 
     window.onbeforeunload = function() {
-        return 'You have unsaved changes!';
-    }
+        return true;
+    };
+
+    $("button.commit-btn").click(function() {
+        window.onbeforeunload = null;
+    });
+
+    $(".form-actions .btn-cancel").click(function() {
+        window.onbeforeunload = null;
+    });
 })();
