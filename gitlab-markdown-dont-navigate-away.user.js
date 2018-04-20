@@ -6,6 +6,7 @@
 // @version      0.1.0
 // @description  Don't navigate away when editing gitlab markdown. Saves loss of work!
 // @author       David Southgate
+// @licence      MIT; https://gitlab.com/southgate/userscripts/gitlab-markdown-dont-navigate-away/raw/master/LICENSE
 // @match        https://gitlab.com/*/edit/*.md
 // @require      https://code.jquery.com/jquery-3.3.1.min.js
 // @grant        none
